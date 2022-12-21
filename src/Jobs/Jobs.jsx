@@ -28,7 +28,8 @@ const Jobs = () => {
             {jobs && jobs.map(job => <div key={job.jobId} style={card}>
                 <p><b>Title: </b>{job.jobTitle}</p>
                 <p><b>Company: </b>{job.companyName}</p>
-                <p><b>Description: </b>{parse(job.jobDescription)}</p>
+                <p><b>Description: </b></p>
+                {parse(job.jobDescription)}
             </div>)}
         </div>
     </>
