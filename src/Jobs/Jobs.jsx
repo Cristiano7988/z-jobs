@@ -18,7 +18,7 @@ const Jobs = () => {
             if (r.status === 200) return r.json();
         })
         .then(r => {
-            setJobs(r);
+            setJobs(r.jobs);
         })
     }, [dateRange])
 
