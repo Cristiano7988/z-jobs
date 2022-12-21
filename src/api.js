@@ -14,13 +14,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get("/jobs", cors(corsOptions), async (req, res) => {
+  const postingDateRange = req.query.posting_date_range || "";
+  const numJobs = req.query.num_jobs || 10;
+
   const response = await axios.post("https://www.zippia.com/api/jobs/", {
     companySkills: true,
     dismissedListingHashes: [],
     fetchJobDesc: true,
     jobTitle: "Business Analyst",
+    postingDateRange,
     locations: [],
-    numJobs: 10,
+    numJobs,
     previousListingHashes: [],
   });
   res.send(response.data).status(200);
