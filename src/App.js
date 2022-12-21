@@ -1,6 +1,9 @@
+import Jobs from './Jobs';
 
 const App = () => {
-  return <></>;
+  return <>
+    <Jobs />
+  </>;
 }
 
 export default App;
